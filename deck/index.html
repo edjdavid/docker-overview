@@ -260,8 +260,10 @@ CMD [ "print('Hello World')" ]
 ```sh
 # Run without --rm
 docker run com.cobenagroup/docker-demo:0.1.0
-# Use docker ps -a to get the image name of the stopped container
-docker run -it --rm --entrypoint /bin/sh <IMAGE_NAME>
+# Commit the stopped image
+docker commit <CONTAINER_ID> <IMG_NAME>
+# Use the image name specified above
+docker run -it --rm --entrypoint /bin/sh <IMG_NAME>
 ```
 Note:
 ```sh
